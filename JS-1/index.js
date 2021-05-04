@@ -28,10 +28,14 @@ function addHandler() {
 }
 
 function deleteHandler() {
-    tasksList.removeChild(tasksList.lastElementChild);
-    tasks.pop();
-    localStorage.clear();
-    saveTasks();
+    if(tasks.length === 0) {
+        alert('List is empty');
+    } else {
+        tasksList.removeChild(tasksList.lastElementChild);
+        tasks.pop();
+        localStorage.clear();
+        saveTasks();
+    }
 }
 
 function saveTasks() {
